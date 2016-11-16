@@ -30,8 +30,8 @@ add_executable( ClassRoster ${CR_SOURCES} )
 file( GLOB SR_SOURCES Chapter-5-Exercises/Unkown-Student-Records/*.cpp )
 add_executable( StudRecord ${SR_SOURCES} )
 
-file( GLOB AUTO_SOURCES Chapter-5-Exercises/Exercises-5-1-and-5-2/*.cpp )
-add_executable( Automobile ${AUTO_SOURCES} )
+file( GLOB AUTOM_SOURCES Chapter-5-Exercises/Exercises-5-1-and-5-2/*.cpp )
+add_executable( Automobile ${AUTOM_SOURCES} )
 
 
 file( GLOB CH6_SOURCES Chapter-6-Exercises/*.cpp )
@@ -40,3 +40,14 @@ foreach( ch6sourcefile ${CH6_SOURCES} )
     get_filename_component(ch6ex ${ch6sourcefile} NAME_WE)
     add_executable( ${ch6ex} ${ch6sourcefile} )
 endforeach( ch6sourcefile ${CH6_SOURCES} )
+
+
+#file( GLOB ET_SOURCES Chapter-7-Exercises/Efficient-Traversal/*.cpp )
+#add_executable( EfficientTraversal ${ET_SOURCES} )
+
+
+file( GLOB FS_SOURCES Chapter-7-Exercises/The-First-Student/*.cpp )
+add_executable( FirstStudent ${FS_SOURCES} )
+
+
+add_executable( matchString Chapter-8/matchWords.cpp )

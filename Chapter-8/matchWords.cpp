@@ -14,8 +14,8 @@ using std::iterator;
 list<string> readWordFile(char * filename) {
     list<string> wordList;
     ifstream wordFile(filename, ios::in);
-    if (wordFile == NULL) {
-        cout << "File open failed. \n";
+    if (!wordFile.is_open()) {
+        std::cout << "File open failed. \n";
         return wordList;
     }
     char currentWord[30];
@@ -32,7 +32,7 @@ void displayList(const list<string> & wordList) {
     list<string>::const_iterator iter;
     iter = wordList.begin();
     while (iter != wordList.end()) {
-        cout << iter->c_str() << "\n";
+        std::cout << iter->c_str() << "\n";
         iter++;
     }
 }
@@ -158,6 +158,10 @@ void displayGuessedLetters(bool letters[26]) {
     cout << "\n";
 }
 
+list<string> reduceByPattern( list<string> wordList, char nextLetter, list<int>) {
+
+}
+
 int main () {
     list<string> wordList = readWordFile("wordlist.txt");
     const int wordLength = 8;
@@ -191,16 +195,16 @@ int main () {
             }
             wordList = reduceByPattern(wordList, nextLetter, nextPattern);
         }
-        cout << "Word so far: " << revealedWord << "\n";
+        std::cout << "Word so far: " << revealedWord << "\n";
         displayGuessedLetters(guessedLetters);
     }
 
     if (misses     == maxMisses) {
-        cout <<"Sorry. You lost. The word I was thinking of was '";
-        cout << (wordList.cbegin())->c_str() << "'.\n";
+        std::cout <<"Sorry. You lost. The word I was thinking of was '";
+        std::cout << (wordList.cbegin())->c_str() << "'.\n";
 
     } else {
-        cout << "Great job. You win. Word was '" << revealedWord << "'.\n";
+        std::cout << "Great job. You win. Word was '" << revealedWord << "'.\n";
     }
     return 0;
 }

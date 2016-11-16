@@ -6,7 +6,7 @@ scIterator::scIterator()
 {
     current = NULL;
 }
-scIterator::scIterator(studentCollection::studentNode* initial)
+scIterator::scIterator(studentCollection::studentNode *initial)
 {
     current = initial;
 }
