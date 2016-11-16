@@ -18,16 +18,20 @@ int doubleDigitValue(int digit);
 
 int main()
 {
-    char digit;
+    char digit = '\0';
     int oddLengthChecksum = 0;
     int evenLengthChecksum = 0;
     int position = 1;
 
     std::cout << "Enter a number: ";
+
+    std::cin.clear();
     digit = std::cin.get();
 
     while(digit != 10)
     {
+
+        // subtract the zero character to convert ASCII representation to real number
 
         if(position % 2 == 0)
         {
@@ -39,6 +43,7 @@ int main()
             oddLengthChecksum += digit - '0';
             evenLengthChecksum += doubleDigitValue(digit - '0');
         }
+
         std::cout << digit << " " << evenLengthChecksum << " " << oddLengthChecksum << '\n';
         digit = std::cin.get();
         position++;

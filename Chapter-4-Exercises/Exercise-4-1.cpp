@@ -6,7 +6,7 @@
 *   remove that limitation using a dynamically allocated array.
 */
 
-#include<iostrea>
+#include<iostream>
 
 int main()
 {
